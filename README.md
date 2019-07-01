@@ -5,7 +5,11 @@ Official bootstrap for running your own [Sentry](https://sentry.io/) with [Docke
 ## Requirements
 
  * Docker 1.10.0+
- * Compose 1.6.0+ _(optional)_
+ * Compose 1.17.0+ _(optional)_
+ 
+ ## Minimum Hardware Requirements:
+ 
+ * You need at least 3GB Ram
 
 ## Up and Running
 
@@ -37,7 +41,7 @@ Updating Sentry using Compose is relatively simple. Just use the following steps
 
 Use the following steps after updating this repository or your Dockerfile:
 ```sh
-docker-compose build # Build the services again after updating
+docker-compose build --pull # Build the services again after updating, and make sure we're up to date on patch version
 docker-compose run --rm web upgrade # Run new migrations
 docker-compose up -d # Recreate the services
 ```
